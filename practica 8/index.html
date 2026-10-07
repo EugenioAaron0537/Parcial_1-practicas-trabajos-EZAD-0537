@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Periódico Digital</title>
+
+    <style>
+
+        /* Aqui le doy el estilo general a toda la pagina */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Este es el contenedor que guarda todo */
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Parte de arriba donde va la fecha y el boton */
+        .encabezado-superior {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            padding-bottom: 8px;
+        }
+
+        .fecha-info {
+            line-height: 1.3;
+        }
+        
+        /* Boton para entrar al formulario */
+        .btn-login {
+            background-color: #326891;
+            color: #ffffff;
+            padding: 6px 14px;
+            font-weight: bold;
+            font-size: 11px;
+            text-decoration: none;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Aqui acomodo el nombre del periodico */
+        .titulo-principal {
+            text-align: center;
+            margin: 15px 0 15px 0;
+        }
+
+        .titulo-principal h1 {
+            font-family: "Georgia", serif;
+            font-size: 56px;
+            margin: 0;
+            font-weight: normal;
+            letter-spacing: -1px;
+        }
+
+        /* Lineas que separan el titulo del menu */
+        nav {
+            border-top: 1px solid #000000;
+            border-bottom: 3px double #000000;
+            padding: 8px 0;
+            margin-bottom: 20px;
+        }
+
+        /* Pongo las opciones del menu en una sola fila */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* Cuando pasas el mouse se subraya */
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1; 
+        }
+
+        /* Aqui empieza la parte principal de las noticias */
+        .seccion-principal {
+            display: flex;
+            gap: 25px;
+            width: 100%;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+
+        /* Columna grande donde puse las noticias principales */
+        .columna-izquierda {
+            flex: 7;
+            border: 1px solid #000000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Texto que dice que las historias son gratis */
+        .banner-gratis {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #cce0ff;
+            margin-bottom: 20px;
+        }
+
+        /* Las tres partes de las noticias */
+        .grid-tres-columnas {
+            display: flex;
+            gap: 20px;
+        }
+
+        .columna-interna {
+            flex: 1;
+        }
+
+        .columna-interna h3 {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            margin-top: 0;
+            line-height: 1.25;
+        }
+
+        .columna-interna p {
+            font-size: 13px;
+            color: #333333;
+            line-height: 1.4;
+        }
+
+        /* Esta es la columna de la derecha */
+        .columna-derecha {
+            flex: 3;
+            box-sizing: border-box;
+        }
+
+        .columna-derecha h2 {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            margin-top: 10px;
+            line-height: 1.25;
+        }
+
+        .columna-derecha p {
+            font-size: 13px;
+            color: #333333;
+            line-height: 1.4;
+        }
+
+        /* Aqui acomodo las dos imagenes de abajo */
+        .flex-imagenes {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        /* Pie de pagina con mis datos */
+        footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #000000;
+            text-align: center;
+            font-size: 12px;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Aqui esta todo el contenido de la pagina -->
+    <div class="contenedor">
+
+        <header>
+
+            <!-- Fecha y boton de inicio de sesion -->
+            <div class="encabezado-superior">
+                <div class="fecha-info">
+                    Lunes, 5 de Octubre de 2026<br>
+                    <b>El Periódico de Hoy</b>
+                </div>
+
+                <div>
+                    <a href="formulario.html" target="_blank" class="btn-login">LOG IN</a>
+                </div>
+            </div>
+
+            <!-- Nombre principal del periodico -->
+            <div class="titulo-principal">
+                <h1><em>THE NEW YORK TIME</em></h1>
+            </div>
+        </header>
+
+        <!-- Menu con las diferentes secciones pero son inutiles no sirven -->
+        <nav>
+            <ul>
+                <li><a href="#">U.S.</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Arts</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Opinion</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#">Shows</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Cooking</a></li>
+                <li><a href="#">Wirecutter</a></li>
+                <li><a href="#">The Athletic</a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <!-- Aqui acomodo las dos columnas principales -->
+            <div class="seccion-principal">
+                
+                <div class="columna-izquierda">
+
+                    <!-- Aviso de las historias gratuitas -->
+                    <div class="banner-gratis">
+                        <b>Estas historias principales son de lectura gratuita.</b>
+                    </div>
+
+                    <!-- Aqui van las noticias principales -->
+                    <div class="grid-tres-columnas">
+
+                        <div class="columna-interna">
+                            <h3>Cómo las elecciones intermedias podrían complicar el nuevo periodo de la Suprema Corte</h3>
+                            <p>Incluso antes de que los jueces comiencen su nuevo periodo hoy, el tribunal ha pasado el verano resolviendo solicitudes de respuesta rápida sobre disputas electorales.</p>
+                        </div>
+
+                        <!-- Imagen de la noticia -->
+                        <div class="columna-interna" style="text-align: center;">
+                            <img src="noticia.png" width="100%" height="300" border="1" alt="Imagen noticia">
+                        </div>
+
+                        <div class="columna-interna">
+                            <h3>Jueces escucharán una demanda ambiental de gran escala</h3>
+                            <p>La Suprema Corte comenzará su periodo con un caso histórico sobre si los gobiernos locales pueden demandar a las compañías petroleras por los daños causados por el cambio climático.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Parte derecha con la receta -->
+                <div class="columna-derecha">
+
+                    <div style="text-align: center;">
+                        <img src="receta.png" width="100%" height="180" border="1" alt="Receta">
+                    </div>
+
+                    <h2>Esta receta de ñoquis con coles de Bruselas tiene más de 27,000 valoraciones</h2>
+                    <p>"¿Quieres mejorar un día entre semana? Cocina esto. ¿Quieres niños felices? Cocina esto. ¿Quieres deslumbrar a tus invitados? Cocina esto," escribió un lector.</p>
+
+                    <!-- Dos imagenes pequeñas para complementar -->
+                    <div class="flex-imagenes">
+                        <img src="1.png" width="50%" height="100" border="1" alt="Foto 1">
+                        <img src="2.png" width="50%" height="100" border="1" alt="Foto 2">
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Mis datos al final de la pagina -->
+        <footer>
+            <h2>Eugenio Zarate Aaron David <br> <em>5-i</em> <br> 0537</h2>
+        </footer>
+
+    </div>
+
+</body>
+</html>
