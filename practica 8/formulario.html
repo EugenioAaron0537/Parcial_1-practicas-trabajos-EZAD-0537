@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario iniciar sesion</title>
+
+    <!-- Esta libreria la use para poner iconos en los botones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body>
+
+    <center>
+
+        <h1><em>Formulario incio de sesion</em></h1>
+
+        <p>Por favor, completa tus datos para la suscripción al periódico:</p>
+        <br>
+
+        <!-- Aqui empieza el formulario -->
+        <form action="" method="post">
+
+            <!-- TIPO: formulario con campos ocultos, este dato no se muestra en la pagina -->
+            <input type="hidden" name="origen" value="periodico_digital">
+
+            <!-- Aqui agrupo los datos de la cuenta -->
+            <fieldset>
+                <legend>Datos de Cuenta</legend>
+
+                Nombre completo:
+                <br>
+                <input type="text" name="nombre" size="30" required>
+                <br><br>
+
+                Correo electrónico:
+                <br>
+                <input type="email" name="email" required>
+                <br><br>
+
+                <!-- TIPO: formulario para contraseñas, se usa password para que no se vea lo que escribes -->
+                Contraseña:
+                <br>
+                <input type="password" name="password" maxlength="15" required>
+            </fieldset>
+
+            <br>
+
+            <!-- Esta parte es para datos personales -->
+            <fieldset>
+                <legend>Información Personal</legend>
+
+                Número de teléfono:
+                <br>
+                <input type="tel" name="telefono">
+                <br><br>
+
+                Fecha de nacimiento:
+                <br>
+                <input type="date" name="fecha">
+                <br><br>
+
+                Edad:
+                <br>
+                <input type="number" name="edad" min="12" max="100">
+                <br><br>
+
+                <!-- TIPO: formulario con Radioboton, aqui solamente se puede escoger una opcion -->
+                Género:
+                <br>
+                <input type="radio" name="genero" value="masculino"> Masculino <br>
+                <input type="radio" name="genero" value="femenino"> Femenino <br>
+                <input type="radio" name="genero" value="otro"> Otro
+                <br><br>
+
+                <!-- TIPO: formulario con seleccion, se escoge una opcion de la lista -->
+                País de residencia:
+                <br>
+                <select name="pais">
+                    <option value="">-- Selecciona un país --</option>
+                    <option value="mexico">México</option>
+                    <option value="espana">España</option>
+                    <option value="estados_unidos">Estados Unidos</option>
+                </select>
+            </fieldset>
+
+            <br>
+
+            <!-- Aqui pongo las preferencias del usuario -->
+            <fieldset>
+                <legend>Preferencias del Periódico</legend>
+
+                <!-- TIPO: formulario con checkbox, Aqui se pueden marcar varias opciones -->
+                Temas de interés para el periódico:
+                <br>
+                <input type="checkbox" name="intereses" value="noticias"> Noticias Generales <br>
+                <input type="checkbox" name="intereses" value="deportes"> Deportes <br>
+                <input type="checkbox" name="intereses" value="tecnologia"> Tecnología y Arte
+                <br><br>
+
+                <!-- TIPO: formulario con archivos
+                     Aqui se puede subir una imagen -->
+                Foto de perfil:
+                <br>
+                <input type="file" name="foto" accept="image/*">
+                <br><br>
+
+                <!-- Otro checkbox pero este es obligatorio -->
+                <input type="checkbox" name="terminos" required> Acepto los términos y condiciones
+            </fieldset>
+
+            <br>
+
+            <!-- TIPO: formulario con botones, estos sirven para enviar o borrar los datos -->
+            <button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i></button>
+            <button type="reset">Borrar <i class="fa fa-trash"></i></button>
+
+        </form>
+
+        <br><br>
+
+        <!-- Este enlace regresa a la pagina principal -->
+        <a href="index.html"> Volver al Periódico</a>
+
+    </center>
+
+</body>
+</html>
