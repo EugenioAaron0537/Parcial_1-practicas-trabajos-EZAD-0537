@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Suscripción | The Juárez York Time</title>
+    <!-- Librería externa de íconos FontAwesome (vista en la pág. 1 y 4 del PDF de formularios) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Estilos generales del formulario */
+        body {
+            background-color: #f4f4f4;
+            color: #000000;
+            font-family: 'Georgia', 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Tarjeta central del formulario */
+        .contenedor-login {
+            max-width: 580px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Título en grande solicitado */
+        h1.titulo-grande {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 5px;
+            color: #111111;
+        }
+
+        /* Subtítulo en letras más chicas solicitado */
+        p.subtitulo-chico {
+            font-size: 14px;
+            text-align: center;
+            color: #555555;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* Estilo para los agrupamientos (<fieldset>) adaptado del PDF */
+        fieldset {
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 15px;
+            color: #6b21a8; /* Color morado alineado al estilo del periódico */
+            padding: 0 8px;
+        }
+
+        /* Grupo de campos */
+        .campo-grupo {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Estilos para inputs de texto, email, password, etc. */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            padding: 9px;
+            font-size: 14px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Opciones tipo Radio */
+        .opciones-radio {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .opciones-radio label {
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        /* Estilos de botones de envío y borrado */
+        .contenedor-botones {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #6b21a8;
+            color: #ffffff;
+        }
+
+        button[type="reset"] {
+            background-color: #e5e7eb;
+            color: #333333;
+        }
+
+        .enlace-volver {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #6b21a8;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Footer del formulario */
+        footer {
+            border-top: 2px solid #000000;
+            margin-top: 30px;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-login">
+        
+        <!-- TÍTULO EN GRANDE SOLICITADO -->
+        <h1 class="titulo-grande">Inicio de sesión</h1>
+        
+        <!-- SUBTÍTULO EN LETRAS MÁS CHICAS SOLICITADO -->
+        <p class="subtitulo-chico">Por favor, completa tus datos para una suscripción al periódico</p>
+
+        <!-- 
+            ===================================================================
+            EXPLICACIÓN DE TIPOS DE FORMULARIOS UTILIZADOS (SEGÚN EL PDF)
+            ===================================================================
+            1. Formulario con Agrupamiento (<fieldset> y <legend>): Pág. 5-6 del PDF.
+            2. Entrada de texto básica (input type="text"): Pág. 1 del PDF.
+            3. Entrada de contraseña (input type="password"): Pág. 2 del PDF.
+            4. Entrada de correo electrónico (input type="email"): Pág. 2 del PDF.
+            5. Radiobotones para selección única (input type="radio"): Pág. 3 del PDF.
+            6. Selección mediante lista desplegable (<select> y <option>): Pág. 4 del PDF.
+            7. Entrada de fecha (input type="date"): Pág. 5-6 del PDF.
+            8. Botones de envío y borrado con íconos (<button type="submit/reset">): Pág. 4 del PDF.
+            ===================================================================
+        -->
+
+        <form action="" method="post">
+
+            <!-- PRIMERA SECCIÓN: DATOS DE LA CUENTA (Uso de <fieldset>) -->
+            <fieldset>
+                <legend>Datos de la Cuenta</legend>
+
+                <!-- 1. Nombre: Input tipo texto -->
+                <div class="campo-grupo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre y apellido" required>
+                </div>
+
+                <!-- 2. Correo Electrónico: Input tipo email -->
+                <div class="campo-grupo">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <!-- 3. Contraseña: Input tipo password -->
+                <div class="campo-grupo">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Crea tu contraseña" required>
+                </div>
+            </fieldset>
+
+            <!-- SEGUNDA SECCIÓN: INFORMACIÓN PERSONAL -->
+            <fieldset>
+                <legend>Información Personal y Demográfica</legend>
+
+                <!-- 4. Número de Teléfono: Input tipo tel -->
+                <div class="campo-grupo">
+                    <label for="telefono">Número de teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="656-123-4567">
+                </div>
+
+                <!-- 5. Fecha de Nacimiento: Input tipo date -->
+                <div class="campo-grupo">
+                    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                </div>
+
+                <!-- 6. Edad: Input tipo number -->
+                <div class="campo-grupo">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="1" max="120" placeholder="Ej. 17">
+                </div>
+
+                <!-- 7. Género: Radiobotones (input type="radio") -->
+                <div class="campo-grupo">
+                    <label>Género:</label>
+                    <div class="opciones-radio">
+                        <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+                        <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+                        <label><input type="radio" name="genero" value="otro"> Otro</label>
+                    </div>
+                </div>
+
+                <!-- 8. País: Lista de Selección (<select> y <option>) -->
+                <div class="campo-grupo">
+                    <label for="pais">País:</label>
+                    <select id="pais" name="pais">
+                        <option value="">-- Selecciona un país --</option>
+                        <option value="Mexico">México</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Espana">España</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="EstadosUnidos">Estados Unidos</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <!-- BOTONES CON ÍCONOS DE FONTAWESOME -->
+            <div class="contenedor-botones">
+                <button type="submit">Enviar suscripción <i class="fa-regular fa-paper-plane"></i></button>
+                <button type="reset">Borrar <i class="fa fa-trash"></i></button>
+            </div>
+
+        </form>
+
+        <!-- ENLACE PARA REGRESAR A LA PÁGINA PRINCIPAL DEL PERIÓDICO -->
+        <a href="index.html" class="enlace-volver">← Volver al periódico principal</a>
+
+    </div>
+
+    <!-- FOOTER DEL ESTUDIANTE -->
+    <footer>
+        nombre: Eugenio Zarate Aaron David<br>
+        grado y grupo: 5°I<br>
+        No. de control: <b>0537</b>
+    </footer>
+
+</body>
+</html>
