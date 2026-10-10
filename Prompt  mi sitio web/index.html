@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta para adaptar el diseño a la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Juárez York Time - Edición Digital</title>
+    
+    <style>
+        /* =========================================================
+           ESTILOS CSS GENERALES: APARIENCIA DE PERIÓDICO TRADICIONAL
+           ========================================================= */
+        body {
+            background-color: #ffffff; /* Fondo blanco tradicional */
+            color: #000000;            /* Texto completamente negro */
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tipografía clásica de periódico */
+            margin: 0;
+            padding: 0 40px;           /* Márgenes laterales para centrar el contenido */
+        }
+
+        /* =========================================================
+           ENCABEZADO PRINCIPAL (HEADER)
+           ========================================================= */
+        header {
+            display: flex;
+            justify-content: space-between; /* Distribuye espacio entre izquierda, centro y derecha */
+            align-items: center;            /* Alinea verticalmente los tres elementos */
+            padding: 25px 10px;             /* Suficiente espacio interno arriba y abajo */
+            background-color: #ffffff;      /* Fondo blanco */
+        }
+
+        /* Esquina superior izquierda: Fecha y edición */
+        .header-izquierda {
+            flex: 1;
+            text-align: left;
+        }
+
+        .fecha-hoy {
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .texto-edicion {
+            font-size: 12px;
+            color: #444444;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* Centro del encabezado: Nombre del periódico */
+        .header-centro {
+            flex: 2;
+            text-align: center;
+        }
+
+        .nombre-periodico {
+            /* Tipo de letra estilo cursiva / elegante */
+            font-family: 'Playfair Display', 'Brush Script MT', 'Georgia', cursive, serif;
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Esquina superior derecha: Botón LOG IN */
+        .header-derecha {
+            flex: 1;
+            text-align: right;
+        }
+
+        /* Botón morado funcional que conecta con login.html */
+        .btn-login {
+            background-color: #6b21a8; /* Color morado */
+            color: #ffffff;            /* Texto en letras blancas */
+            padding: 10px 22px;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;     /* Quita el subrayado de enlace */
+            border-radius: 4px;        /* Esquinas rectangulares con leve redondeo */
+            display: inline-block;
+        }
+
+        .btn-login:hover {
+            background-color: #581c87; /* Efecto al pasar el cursor */
+        }
+
+        /* =========================================================
+           BARRA DE NAVEGACIÓN HORIZONTAL NO FUNCIONAL
+           ========================================================= */
+        nav {
+            margin-top: 10px;
+        }
+
+        .menu-navegacion {
+            list-style: none;          /* Quita las viñetas */
+            margin: 0;
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-around; /* Distribuye uniformemente las opciones de manera horizontal */
+            align-items: center;
+            border-top: 2px solid #000000;  /* Línea horizontal superior */
+        }
+
+        .menu-navegacion li a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 14px;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;     /* Estilo de prensa en mayúsculas */
+        }
+
+        /* Línea horizontal delgada debajo del menú */
+        .linea-separadora-menu {
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 0 0 25px 0;
+        }
+
+        /* =========================================================
+           CONTENIDO PRINCIPAL: DISTRIBUCIÓN DE DOS COLUMNAS
+           ========================================================= */
+        .contenedor-principal {
+            display: flex;
+            gap: 25px; /* Espacio de separación entre las dos columnas */
+        }
+
+        /* Columna izquierda (~70%) */
+        .columna-izquierda {
+            flex: 7; /* Representa el 70% del espacio disponible */
+        }
+
+        /* Línea vertical separadora gris claro */
+        .linea-vertical {
+            width: 1px;
+            background-color: #d1d5db; /* Color gris claro */
+        }
+
+        /* Columna derecha (~30%) */
+        .columna-derecha {
+            flex: 3; /* Representa el 30% restante */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Estilos de la columna izquierda */
+        .noticias-dia-texto {
+            text-align: center;
+            font-size: 15px;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .titulo-noticia-juarez {
+            font-family: 'Garamond', 'Georgia', cursive, serif; /* Fuente distintiva cursiva/serif */
+            font-size: 36px;
+            font-style: italic;
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .texto-noticia {
+            font-size: 16px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .imagen-noticia {
+            width: 100%;
+            max-width: 520px; /* Tamaño moderado para no verse exageradamente grande */
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border: 1px solid #cccccc;
+        }
+
+        /* Estilos de la columna derecha */
+        .titulo-seccion-derecha {
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 5px;
+        }
+
+        /* Imagen de la receta de tipo rectangular */
+        .imagen-receta {
+            width: 100%;
+            height: 140px;
+            object-fit: cover; /* Recorta la imagen para mantener formato rectangular */
+            margin: 10px 0;
+            border: 1px solid #cccccc;
+        }
+
+        .linea-horizontal-gris {
+            border: none;
+            border-top: 1px solid #d1d5db; /* Línea delgada gris claro */
+            margin: 15px 0;
+        }
+
+        .imagen-luismiguel {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            margin: 10px 0;
+            border: 1px solid #cccccc;
+        }
+
+        /* =========================================================
+           PIE DE PÁGINA (FOOTER)
+           ========================================================= */
+        footer {
+            border-top: 3px double #000000;
+            margin-top: 40px;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL DEL PERIÓDICO -->
+    <header>
+        <!-- Esquina superior izquierda: Fecha de hoy y tipo de edición -->
+        <div class="header-izquierda">
+            <div class="fecha-hoy">Viernes, 9 de Octubre de 2026</div>
+            <div class="texto-edicion">Edición digital</div>
+        </div>
+
+        <!-- Centro: Nombre del periódico en letras grandes estilo cursiva -->
+        <div class="header-centro">
+            <h1 class="nombre-periodico">The Juárez York Time</h1>
+        </div>
+
+        <!-- Esquina superior derecha: Botón morado "LOG IN" enlazado a login.html -->
+        <div class="header-derecha">
+            <a href="login.html" class="btn-login">LOG IN</a>
+        </div>
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN HORIZONTAL NO FUNCIONAL -->
+    <nav>
+        <ul class="menu-navegacion">
+            <li><a href="#">Política</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Arte</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Música</a></li>
+            <li><a href="#">Tecnología</a></li>
+        </ul>
+    </nav>
+
+    <!-- LÍNEA HORIZONTAL DELGADA DE SEPARACIÓN DEL MENÚ -->
+    <hr class="linea-separadora-menu">
+
+    <!-- CONTENIDO PRINCIPAL: DISTRIBUCIÓN EN DOS COLUMNAS (70% / 30%) -->
+    <main class="contenedor-principal">
+
+        <!-- COLUMNA IZQUIERDA: NOTICIA PRINCIPAL (~70%) -->
+        <section class="columna-izquierda">
+            <!-- Texto centrado e indicador de noticias del día -->
+            <p class="noticias-dia-texto"><strong>Estas son las noticias del día</strong></p>
+            
+            <!-- Título grande en letra cursiva o fuente elegante -->
+            <h2 class="titulo-noticia-juarez">Cd. Juárez lidera proyecto de innovación ecológica e infraestructura urbana moderna</h2>
+            
+            <!-- Cuerpo de la noticia con negritas y saltos de línea -->
+            <div class="texto-noticia">
+                <p>
+                    <strong>Ciudad Juárez, Chih.</strong> — Autoridades locales y grupos comunitarios anunciaron hoy la inauguración del nuevo <em>Parque Tecnológico y Ecológico Fronterizo</em>, un desarrollo urbano de vanguardia diseñado para revitalizar la imagen urbana de la ciudad.
+                </p>
+                <br>
+                <p>
+                    El proyecto abarcará más de <strong>40 hectáreas de espacios verdes</strong>, ciclovías interconectadas y zonas de energía limpia. Además, contará con instalaciones diseñadas para impulsar el talento tecnológico juvenil en la frontera.
+                </p>
+                <br>
+                <p>
+                    Líderes de la comunidad destacaron que este avance representa un <strong>paso firme hacia una ciudad más verde, segura y conectada</strong>.
+                </p>
+            </div>
+
+            <!-- Espacio para agregar imagen desde tu computadora (reemplaza 'noticia_juarez.jpg' por el nombre de tu archivo) -->
+            <img src="noticia_juarez.png" alt="Imagen Noticia Cd. Juárez" class="imagen-noticia">
+        </section>
+
+        <!-- LÍNEA VERTICAL GRIS CLARO PARA SEPARAR COLUMNAS -->
+        <div class="linea-vertical"></div>
+
+        <!-- COLUMNA DERECHA: RECETA Y LUIS MIGUEL (~30%) -->
+        <aside class="columna-derecha">
+
+            <!-- PARTE SUPERIOR: RECETA DE COCINA -->
+            <section>
+                <h3 class="titulo-seccion-derecha">Receta del Día: Burritos de Arrachera Juárez</h3>
+                <p class="texto-noticia">
+                    Una preparación sencilla y llena de sabor tradicional:
+                </p>
+                <ul style="padding-left: 18px; font-size: 14px;">
+                    <li><strong>Ingredientes:</strong> Tortillas de harina, 250g de arrachera, chile pasado y queso asadero.</li>
+                    <li><strong>Pasos:</strong> Asar la carne, guisar el chile con queso y envolver caliente.</li>
+                </ul>
+
+                <!-- Imagen rectangular de la receta (reemplaza 'receta_burrito.jpg' por tu archivo local) -->
+                <img src="receta_burrito.png" alt="Imagen Rectangular Receta" class="imagen-receta">
+            </section>
+
+            <!-- LÍNEA HORIZONTAL GRIS CLARO DE DIVISIÓN INTERNA -->
+            <hr class="linea-horizontal-gris">
+
+            <!-- PARTE INFERIOR: INFORMACIÓN CORTA TOUR LUIS MIGUEL 2027 -->
+            <section>
+                <h3 class="titulo-seccion-derecha">Espectáculos: Tour Luis Miguel 2027</h3>
+                <p class="texto-noticia">
+                    El aclamado cantante <strong>Luis Miguel</strong> ha confirmado las primeras fechas de su gira mundial <em>Tour 2027</em>.
+                </p>
+                <br>
+                <p class="texto-noticia">
+                    Se espera su llegada a la frontera para un <strong>concierto masivo e inolvidable</strong>. La venta anticipada de boletos iniciará próximamente.
+                </p>
+
+                <!-- Imagen de Luis Miguel (reemplaza 'luis_miguel.jpg' por tu archivo local) -->
+                <img src="luis_miguel.png" alt="Imagen Luis Miguel Tour 2027" class="imagen-luismiguel">
+            </section>
+
+        </aside>
+
+    </main>
+
+    <!-- FOOTER DEL SITIO WEB -->
+    <footer>
+        nombre: Eugenio Zarate Aaron David<br>
+        grado y grupo: 5°I<br>
+        No. de control: <b>0537</b>
+    </footer>
+
+</body>
+</html>
