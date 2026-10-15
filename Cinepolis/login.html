@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinépolis - Iniciar Sesión / Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #001e42;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a.activo {
+            color: #ffcc00;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #001e42;
+            color: #ffcc00;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #ffcc00;
+        }
+
+        /* Cuerpo principal */
+        main {
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        /* Estilo para agrupamientos (fieldset) */
+        fieldset {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #001e42;
+            padding: 0 5px;
+        }
+
+        label {
+            color: #001e42;
+            font-weight: bold;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"], 
+        input[type="date"], 
+        input[type="file"], 
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 12px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .opciones-inline {
+            margin: 8px 0 12px 0;
+        }
+
+        button[type="submit"] {
+            background-color: #001e42;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button[type="reset"] {
+            background-color: #d1d5db;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #001e42;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="index.html">En Cartelera</a>
+        <a href="proximos.html">Próximos Estrenos</a>
+        <a href="club.html">Club Cinépolis</a>
+        <a href="login.html" class="activo">Iniciar Sesión / Registro</a>
+    </nav>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Cinépolis</h1>
+        <p>Acceso a tu Cuenta</p>
+    </header>
+
+    <!-- Cuerpo -->
+    <main>
+
+        <!-- FORMULARIO 1: INICIAR SESIÓN -->
+        <form action="#" method="post">
+            
+            <!-- TIPO DE FORMULARIO USADO: Agrupamiento (fieldset y legend)[cite: 7, 8] -->
+            <fieldset>
+                <legend>Iniciar Sesión</legend>
+
+                <!-- TIPO DE FORMULARIO USADO: Formulario básico de texto / email[cite: 3, 4] -->
+                <label for="usuario">Ingresa tu correo o usuario:</label><br>
+                <input type="email" id="usuario" name="usuario" required>
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Formulario para contraseñas (input type="password") -->
+                <!-- Oculta los caracteres tipeados por seguridad[cite: 4] -->
+                <label for="pass">Ingresa tu contraseña:</label><br>
+                <input type="password" id="pass" name="pass" required>
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Botones con type="submit" y type="reset"[cite: 4, 6] -->
+                <button type="submit">Iniciar Sesión</button>
+                <button type="reset">Borrar</button>
+            </fieldset>
+
+        </form>
+
+        <!-- FORMULARIO 2: REGISTRO DE USUARIO -->
+        <form action="#" method="post">
+
+            <!-- TIPO DE FORMULARIO USADO: Agrupamiento (fieldset y legend)[cite: 7, 8] -->
+            <fieldset>
+                <legend>Registro de Nuevo Usuario</legend>
+
+                <label for="nombre">Nombre completo:</label><br>
+                <input type="text" id="nombre" name="nombre" required>
+                <br>
+
+                <label for="correo_reg">Correo electrónico:</label><br>
+                <input type="email" id="correo_reg" name="correo_reg" required>
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Formulario para contraseñas con limitaciones (maxlength)[cite: 4, 9] -->
+                <label for="pass_reg">Contraseña (máximo 8 caracteres):</label><br>
+                <input type="password" id="pass_reg" name="pass_reg" maxlength="8" required>
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Entrada de fecha (input type="date") -->
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Formulario con selección de país / ciudad[cite: 6] -->
+                <label for="pais">Selecciona tu país:</label><br>
+                <select id="pais" name="pais">
+                    <option value="1">México</option>
+                    <option value="2">Guatemala</option>
+                    <option value="3">España</option>
+                    <option value="4">Colombia</option>
+                </select>
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Formulario para subir archivos (input type="file") -->
+                <!-- Permite adjuntar un archivo (por ejemplo, identificación o foto de perfil)[cite: 6, 7] -->
+                <label for="identificacion">Subir identificación o foto de perfil:</label><br>
+                <input type="file" id="identificacion" name="identificacion">
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Formulario con Checkbox[cite: 5] -->
+                <div class="opciones-inline">
+                    <input type="checkbox" name="terminos" required> Acepto los términos y condiciones de Cinépolis
+                </div>
+
+                <!-- TIPO DE FORMULARIO USADO: Botones con type="submit" y type="reset"[cite: 4, 6] -->
+                <button type="submit">Registrarse</button>
+                <button type="reset">Borrar Campos</button>
+            </fieldset>
+
+        </form>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Eugenio Zarate Aaron David<br>
+        <em>5-I</em><br>
+        <em>0537</em></strong></p>
+    </footer>
+
+</body>
+</html>

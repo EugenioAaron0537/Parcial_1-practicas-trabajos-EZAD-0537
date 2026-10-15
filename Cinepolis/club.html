@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinépolis - Club Cinépolis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #001e42;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a.activo {
+            color: #ffcc00;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #001e42;
+            color: #ffcc00;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #ffcc00;
+        }
+
+        /* Cuerpo principal */
+        main {
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        /* Estilo para agrupamientos (fieldset) */
+        fieldset {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #001e42;
+            padding: 0 5px;
+        }
+
+        label {
+            color: #001e42;
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 15px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .opciones-inline {
+            margin: 10px 0 15px 0;
+        }
+
+        button[type="submit"] {
+            background-color: #ffcc00;
+            color: #001e42;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button[type="reset"] {
+            background-color: #d1d5db;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #001e42;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="index.html">En Cartelera</a>
+        <a href="proximos.html">Próximos Estrenos</a>
+        <a href="club.html" class="activo">Club Cinépolis</a>
+        <a href="login.html">Iniciar Sesión / Registro</a>
+    </nav>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Cinépolis</h1>
+        <p>Ingresa a tu Club Cinépolis</p>
+    </header>
+
+    <!-- Cuerpo -->
+    <main>
+        <h2>Ingresar Tarjeta Club Cinépolis</h2>
+
+        <form action="#" method="post">
+
+            <!-- TIPO DE FORMULARIO USADO: Campo oculto (input type="hidden") -->
+            <!-- Sirve para enviar información interna al servidor sin mostrarla al usuario[cite: 7] -->
+            <input type="hidden" name="origen" value="pagina_club">
+
+            <!-- TIPO DE FORMULARIO USADO: Formularios con agrupamiento (fieldset y legend) -->
+            <fieldset>
+                <legend>Datos de la Tarjeta</legend>
+
+                <!-- TIPO DE FORMULARIO USADO: Formulario con limitaciones (maxlength) -->
+                <!-- Limita el número de caracteres a máximo 16 dígitos[cite: 9] -->
+                <label for="tarjeta">Número de Tarjeta (16 dígitos):</label><br>
+                <input type="text" id="tarjeta" name="tarjeta" maxlength="16" placeholder="Ej. 1234567890123456" required>
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Formularios con Radiobotón (input type="radio") -->
+                <!-- Permite seleccionar una única opción entre varias opciones -->
+                <label>Tipo de tarjeta:</label>
+                <div class="opciones-inline">
+                    <input type="radio" name="tipo_tarjeta" value="fisica" checked> Física
+                    <input type="radio" name="tipo_tarjeta" value="digital"> Digital
+                </div>
+
+                <!-- TIPO DE FORMULARIO USADO: Formularios con selección (select y option) -->
+                <!-- Presenta un menú desplegable de opciones[cite: 6] -->
+                <label for="nivel">Nivel de tu tarjeta:</label>
+                <select id="nivel" name="nivel">
+                    <option value="1">Fanático</option>
+                    <option value="2">Súper Fanático</option>
+                    <option value="3">Leyenda</option>
+                </select>
+                <br>
+
+                <!-- TIPO DE FORMULARIO USADO: Formularios con checkbox (input type="checkbox")[cite: 5] -->
+                <!-- Permite marcar una o varias casillas[cite: 5] -->
+                <div class="opciones-inline">
+                    <input type="checkbox" name="recordar" value="si"> Recordar esta tarjeta en este dispositivo
+                </div>
+            </fieldset>
+
+            <!-- TIPO DE FORMULARIO USADO: Formulario con botones (button type="submit" y type="reset") -->
+            <button type="submit">Enviar Tarjeta</button>
+            <button type="reset">Borrar Datos</button>
+
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Eugenio Zarate Aaron David<br>
+        <em>5-I</em><br>
+        <em>0537</em></strong></p>
+    </footer>
+
+</body>
+</html>

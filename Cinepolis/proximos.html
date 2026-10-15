@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinépolis - Próximos Estrenos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #001e42;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a.activo {
+            color: #ffcc00;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #001e42;
+            color: #ffcc00;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #ffcc00;
+        }
+
+        /* Cuerpo principal */
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        main h2 {
+            color: #001e42;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Contenedor en fila horizontal */
+        .contenedor-peliculas {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Tarjeta individual de estreno */
+        .tarjeta-estreno {
+            width: 220px;
+            text-align: left;
+        }
+
+        /* Imagen con bordes redondeados y sombra */
+        .tarjeta-estreno img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            display: block;
+        }
+
+        /* Título de la película */
+        .tarjeta-estreno h3 {
+            font-size: 15px;
+            color: #111;
+            margin: 12px 0 6px 0;
+            line-height: 1.3;
+            height: 38px;
+            overflow: hidden;
+        }
+
+        /* Fecha de estreno */
+        .fecha {
+            font-size: 14px;
+            color: #555;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #001e42;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="index.html">En Cartelera</a>
+        <a href="proximos.html" class="activo">Próximos Estrenos</a>
+        <a href="club.html">Club Cinépolis</a>
+        <a href="login.html">Iniciar Sesión / Registro</a>
+    </nav>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Cinépolis</h1>
+        <p>Próximamente en nuestros cines</p>
+    </header>
+
+    <!-- Cuerpo -->
+    <main>
+        <h2>Próximos Estrenos</h2>
+
+        <div class="contenedor-peliculas">
+
+            <!-- Película 1 -->
+            <div class="tarjeta-estreno">
+                <img src="doom.png" alt="Trivia Night Avengers: Doomsday">
+                <h3>Trivia Night Avengers: Doomsday</h3>
+                <p class="fecha">15th Dic</p>
+            </div>
+
+            <!-- Película 2 -->
+            <div class="tarjeta-estreno">
+                <img src="bts.png" alt="BTS WORLD TOUR ARIRANG">
+                <h3>BTS WORLD TOUR 'ARIRANG' IN BUENOS AIRES: EN VIVO</h3>
+                <p class="fecha">24th Oct</p>
+            </div>
+
+            <!-- Película 3 -->
+            <div class="tarjeta-estreno">
+                <img src="sv.png" alt="HCF: HYBE CHEERING PARTY">
+                <h3>HCF: HYBE CHEERING PARTY</h3>
+                <p class="fecha">24th Oct</p>
+            </div>
+
+            <!-- Película 4 -->
+            <div class="tarjeta-estreno">
+                <img src="godzilla.png" alt="Godzilla Minus Zero">
+                <h3>Godzilla Minus Zero</h3>
+                <p class="fecha">5th Nov</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Eugenio Zarate Aaron David<br>
+        <em>5-I</em><br>
+        <em>0537</em></strong></p>
+    </footer>
+
+</body>
+</html>
